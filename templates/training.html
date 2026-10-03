@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Awareness | PhishShield{% endblock %}
+{% block content %}<div class="pagehead"><div><div class="eyebrow">MICRO-LEARNING HUB</div><h1>Build phishing resistance</h1><p>Short lessons users can complete after a simulation.</p></div></div>
+<div class="lesson-grid">{% for l in lessons %}<article class="lesson-card"><span>{{ l.category }}</span><h2>{{ l.title }}</h2><p>{{ l.body }}</p><button class="secondary" onclick="this.textContent='✓ Completed'; this.disabled=true">Mark complete</button></article>{% endfor %}</div>{% endblock %}

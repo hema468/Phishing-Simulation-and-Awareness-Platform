@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% block title %}PhishShield | Security Awareness{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">CYBERSECURITY • AWARENESS • SIMULATION</div>
+    <h1>Train people to <span>spot phishing</span> before attackers do.</h1>
+    <p>PhishShield is a safe, measurable phishing-simulation and awareness platform for organizations, colleges and security teams.</p>
+    <div class="hero-actions"><a class="primary" href="{{ url_for('register') }}">Launch platform →</a><a class="secondary" href="{{ url_for('login') }}">Sign in</a></div>
+  </div>
+  <div class="hero-card"><div class="shield">🛡️</div><h3>Human Risk Dashboard</h3><div class="metric"><b>94%</b><span>awareness score</span></div><div class="progress"><i></i></div><p>Real-time simulation insights</p></div>
+</section>
+<section class="feature-grid">
+  <article><b>🎯 Safe Simulations</b><p>Controlled scenarios teach users how suspicious messages look and behave.</p></article>
+  <article><b>📊 Measurable Reports</b><p>Track opens, clicks and reports to understand awareness trends.</p></article>
+  <article><b>🎓 Micro-Learning</b><p>Short lessons turn simulation mistakes into practical security habits.</p></article>
+  <article><b>🔒 Privacy First</b><p>No real passwords, banking details or sensitive credentials are requested.</p></article>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Simulations | PhishShield{% endblock %}
+{% block content %}<div class="pagehead"><div><div class="eyebrow">SIMULATION CENTER</div><h1>Awareness campaigns</h1><p>Build safe, controlled scenarios for your users.</p></div><a class="primary" href="{{ url_for('new_campaign') }}">+ New campaign</a></div>
+<div class="tablepanel"><table><thead><tr><th>Campaign</th><th>Scenario</th><th>Difficulty</th><th>Status</th><th>Action</th></tr></thead><tbody>
+{% for c in campaigns %}<tr><td><b>{{ c.name }}</b></td><td>{{ c.scenario }}</td><td><span class="pill">{{ c.difficulty }}</span></td><td><span class="status">{{ c.status }}</span></td><td><a class="tablelink" href="{{ url_for('simulate', campaign_id=c.id) }}">Open simulation →</a></td></tr>{% else %}<tr><td colspan="5">No campaigns yet.</td></tr>{% endfor %}
+</tbody></table></div>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Sign in | PhishShield{% endblock %}
+{% block content %}<div class="auth"><div class="authbox"><div class="logo-mini">🛡</div><h1>Welcome back</h1><p>Sign in to your security awareness console.</p>
+<form method="post"><label>Email</label><input type="email" name="email" required placeholder="you@example.com"><label>Password</label><input type="password" name="password" required placeholder="••••••••"><button class="primary full">Sign in</button></form>
+<p class="muted">New here? <a href="{{ url_for('register') }}">Create an account</a></p></div></div>{% endblock %}

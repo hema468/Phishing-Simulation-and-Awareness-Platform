@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}PhishShield{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="{{ url_for('index') }}"><span>🛡</span> PhishShield</a>
+  {% if session.get('user_id') %}
+  <div class="navlinks">
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('campaigns') }}">Simulations</a>
+    <a href="{{ url_for('training') }}">Awareness</a>
+    <a href="{{ url_for('reports') }}">Reports</a>
+    <a class="logout" href="{{ url_for('logout') }}">Logout</a>
+  </div>
+  {% else %}
+  <div class="navlinks"><a href="{{ url_for('login') }}">Sign in</a><a class="navbtn" href="{{ url_for('register') }}">Get started</a></div>
+  {% endif %}
+</nav>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}<div class="flash {{category}}">{{ message }}</div>{% endfor %}
+{% endwith %}
+<main>{% block content %}{% endblock %}</main>
+<footer>PhishShield • Ethical security awareness platform • Simulation only — no real credentials collected</footer>
+</body>
+</html>

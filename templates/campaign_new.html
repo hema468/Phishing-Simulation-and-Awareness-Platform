@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}New campaign | PhishShield{% endblock %}
+{% block content %}<div class="formpage"><div class="formcard"><div class="eyebrow">CREATE EXERCISE</div><h1>New awareness simulation</h1><p>Use fictional, controlled content. Do not request real credentials.</p>
+<form method="post"><label>Campaign name</label><input name="name" required placeholder="e.g. Invoice Verification Drill"><label>Scenario</label><input name="scenario" required placeholder="e.g. Unexpected invoice email"><label>Difficulty</label><select name="difficulty"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select><button class="primary">Create campaign</button></form></div></div>{% endblock %}
